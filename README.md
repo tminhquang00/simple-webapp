@@ -18,3 +18,7 @@ $ npm start
 ```
 
 The server will be running in [http://localhost:3001](http://localhost:3001) and client is running in [http://localhost:3000](http://localhost:3000)
+
+## Deployment
+
+The server will be deployed in heroku and can be access by this [link](https://test-app-qt2706.herokuapp.com)
