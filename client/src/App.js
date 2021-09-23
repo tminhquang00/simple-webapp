@@ -13,6 +13,7 @@ import {
   Col,
   Empty,
 } from 'antd';
+
 const {Search} = Input;
 
 const EditableCell = ({
@@ -156,6 +157,8 @@ function App () {
       },
     },
   ];
+
+
   const mergedColumns = columns.map (col => {
     if (!col.editable) {
       return col;
@@ -173,7 +176,7 @@ function App () {
     };
   });
 
-  // we will use async/await to fetch this data
+  // Get data
   async function getData (value) {
     setIsLoading (true);
     const res = await fetch (`/api/users?name=` + value);
