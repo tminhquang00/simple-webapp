@@ -224,7 +224,7 @@ function App () {
               </Form>
             : <Empty
                 image={Empty.PRESENTED_IMAGE_SIMPLE}
-                description={<span>No user to display</span>}
+                description={<span>No user to display. Click search to display</span>}
               />}
         </Col>
       </Row>
