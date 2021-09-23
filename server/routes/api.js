@@ -109,7 +109,7 @@ router.post('/update', async(req, res, next) => {
                     }
                 });
             },
-            
+
             function(err) {
                 // Passing the status code only for the example.
                 // `err` should be an object with more metadata probably
@@ -117,8 +117,9 @@ router.post('/update', async(req, res, next) => {
                     res.sendStatus(err);
                     return;
                 }
-                res.status(200).json({ error: 'false', message: 'Document updated' });
+                res.status(200).json({ error: 'false', message: 'Document updated'});
             }
+
         );
     }
 });

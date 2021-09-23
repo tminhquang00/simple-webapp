@@ -29,9 +29,9 @@ app.use(cors());
 const swaggerDefinition = {
     openapi: '3.0.0',
     info: {
-        title: 'Express API for WebScape Capstone Project',
+        title: 'Simple webapp',
         version: '1.0.0',
-        description: 'This is a REST API application made with Express. It retrieves AMR data.',
+        description: 'This is a REST API application made with Express. It retrieves json data.',
     },
     servers: [{
         url: 'http://localhost:3001',
@@ -67,10 +67,10 @@ MongoClient.connect(DATABASE_URL, {
                 res.sendFile(path.join(__dirname + '/../client/build/index.html'));
             });
         }
-        // catch 404 and forward to error handler
-        app.use(function(req, res, next) {
-            next(createError(404));
-        });
+        // // catch 404 and forward to error handler
+        // app.use(function(req, res, next) {
+        //     next(createError(404));
+        // });
 
         // error handler
         app.use(function(err, req, res, next) {

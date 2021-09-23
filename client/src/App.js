@@ -54,7 +54,6 @@ function App () {
   const [data, setData] = useState (null);
   const [form] = Form.useForm ();
   const [editingKey, setEditingKey] = useState ('');
-
   const isEditing = record => record.id === editingKey;
 
   const edit = record => {
@@ -193,6 +192,7 @@ function App () {
   };
 
   return (
+
     <div className="App">
       <Row align="center">
         <Col span={5}>
@@ -207,7 +207,6 @@ function App () {
       </Row>
       <Row align="center">
         <Col span={15}>
-
           {data !== null && data.length > 0 && isLoading === false
             ? <Form form={form} component={false}>
                 <Table
@@ -227,7 +226,7 @@ function App () {
               </Form>
             : <Empty
                 image={Empty.PRESENTED_IMAGE_SIMPLE}
-                description={<span>No user to display</span>}
+                description={<span>No user to display. Click search button to retrieve user</span>}
               />}
         </Col>
       </Row>
