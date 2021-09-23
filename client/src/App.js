@@ -13,7 +13,6 @@ import {
   Col,
   Empty,
 } from 'antd';
-
 const {Search} = Input;
 
 const EditableCell = ({
@@ -54,6 +53,7 @@ function App () {
   const [data, setData] = useState (null);
   const [form] = Form.useForm ();
   const [editingKey, setEditingKey] = useState ('');
+
   const isEditing = record => record.id === editingKey;
 
   const edit = record => {
@@ -156,8 +156,6 @@ function App () {
       },
     },
   ];
-
-
   const mergedColumns = columns.map (col => {
     if (!col.editable) {
       return col;
@@ -175,7 +173,7 @@ function App () {
     };
   });
 
-  // Get data
+  // we will use async/await to fetch this data
   async function getData (value) {
     setIsLoading (true);
     const res = await fetch (`/api/users?name=` + value);
@@ -192,7 +190,6 @@ function App () {
   };
 
   return (
-
     <div className="App">
       <Row align="center">
         <Col span={5}>
@@ -207,6 +204,7 @@ function App () {
       </Row>
       <Row align="center">
         <Col span={15}>
+
           {data !== null && data.length > 0 && isLoading === false
             ? <Form form={form} component={false}>
                 <Table
@@ -226,7 +224,7 @@ function App () {
               </Form>
             : <Empty
                 image={Empty.PRESENTED_IMAGE_SIMPLE}
-                description={<span>No user to display. Click search button to retrieve user</span>}
+                description={<span>No user to display</span>}
               />}
         </Col>
       </Row>

@@ -49,9 +49,10 @@ const options = {
 const swaggerSpec = swaggerJSDoc(options);
 
 // connect to the Database
+// const DATABASE_URL =
+//     'mongodb+srv://admin:123@simpleweb.qardw.mongodb.net/SimpleWeb?retryWrites=true&w=majority';
 const DATABASE_URL =
-    'mongodb+srv://admin:123@simpleweb.qardw.mongodb.net/SimpleWeb?retryWrites=true&w=majority';
-
+    'mongodb+srv://admin:admin@cluster0.3i5wc.mongodb.net/test';
 MongoClient.connect(DATABASE_URL, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
